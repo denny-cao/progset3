@@ -1,0 +1,174 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{../../../evan}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{pgfplots}
+\usepackage{subcaption}
+\pgfplotsset{compat=1.18}
+\definecolor{dg}{RGB}{2,101,15}
+\newtheoremstyle{dotlessP}{}{}{}{}{\color{dg}\bfseries}{}{ }{}
+\theoremstyle{dotlessP}
+\newtheorem{property}[theorem]{Property}
+\newtheoremstyle{dotlessN}{}{}{}{}{\color{teal}\bfseries}{}{ }{}
+\theoremstyle{dotlessN}
+\newtheorem{notation}[theorem]{Notation}
+\newtheoremstyle{dotN}{}{}{}{}{\color{teal}\bfseries}{.}{ }{}
+\theoremstyle{dotN}
+\newtheorem{solution}{Solution}
+\RequirePackage[linesnumbered,lined,boxed,commentsnumbered,noend]{algorithm2e}
+\usepackage{algpseudocode}
+% Shortcuts
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil} % ceil function
+\DeclarePairedDelimiter\flr{\lfloor}{\rfloor} % floor function
+
+\DeclarePairedDelimiter\paren{(}{)} % parenthesis
+
+\newcommand{\df}{\displaystyle\frac} % displaystyle fraction
+\newcommand{\qeq}{\overset{?}{=}} % questionable equality
+
+\newcommand{\Mod}[1]{\;\mathrm{mod}\; #1} % modulo operator
+
+\newcommand{\comp}{\circ} % composition
+
+% Text Modifiers
+\newcommand{\tbf}{\textbf}
+\newcommand{\tit}{\textit}
+
+% Sets
+\DeclarePairedDelimiter\set{\{}{\}}
+\newcommand{\unite}{\cup}
+\newcommand{\inter}{\cap}
+
+\newcommand{\reals}{\mathbb{R}} % real numbers: textbook is Z^+ and 0
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\nats}{\mathbb{N}}
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\tots}{\mathbb{Q}}
+
+\newcommand{\degree}{^\circ}
+
+% Counting
+\newcommand\perm[2][^n]{\prescript{#1\mkern-2.5mu}{}P_{#2}}
+\newcommand\comb[2][^n]{\prescript{#1\mkern-0.5mu}{}C_{#2}}
+
+% Relations
+\newcommand{\rel}{\mathcal{R}} % relation
+
+\setlength\parindent{0pt}
+
+% Directed Graphs
+\usetikzlibrary{arrows}
+\usetikzlibrary{positioning,chains,fit,shapes,calc}
+
+% Contradiction
+\newcommand{\contradiction}{{\hbox{%
+    \setbox0=\hbox{$\mkern-3mu\times\mkern-3mu$}%
+    \setbox1=\hbox to0pt{\hss$\times$\hss}%
+    \copy0\raisebox{0.5\wd0}{\copy1}\raisebox{-0.5\wd0}{\box1}\box0
+}}}
+
+% CS 
+% NP
+% Modulo without space
+\newcommand{\nmod}[1]{\;\mathrm{mod}\;#1}
+\newcommand{\np}{\texttt{NP}_\texttt{search}}
+\newcommand{\p}{\texttt{P}_\texttt{search}}
+\newcommand{\nph}{\texttt{NP}_\texttt{search}\text{-hard}}
+\newcommand{\npc}{\texttt{NP}_\texttt{search}\text{-complete}}
+\newcommand{\EXP}{\texttt{EXP}_\texttt{search}}
+\newcommand{\xxhash}[2]{\rotatebox[origin=c]{#2}{$#1\parallel$}}
+
+\title{CS 124: Data Structures and Algorithms}
+\subtitle{Programming Set 3}
+\author{Cao and Ziv}
+\date{\today}
+\newcommand{\courseNumber}{CS 124}
+\newcommand{\courseName}{Data Structures and Algorithms}
+\newcommand{\psetName}{ProgSet 3}
+\newcommand{\dueDate}{Due: Thursday, April 18, 2024}
+\newcommand{\name}{Denny Cao and Ossimi Ziv}
+\renewcommand{\theques}{\thesection.\alph{ques}} % Change subtheo counter for alpha output
+\declaretheorem[style=basehead,name=Answer,sibling=theorem]{ans}
+\renewcommand{\theans}{\thesection.\alph{ans}}
+
+% stuff for algorithm environment
+%%% Coloring the comment as blue
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
+
+\SetKwInput{KwInput}{Input}                % Set the Input
+\SetKwInput{KwOutput}{Output}              % set the Output
+
+\makeatletter
+\newenvironment{compprob}[1][]
+  {\renewcommand{\algorithmcfname}{Computational Problem}%
+   \begin{algorithm}[#1]
+   \long\def\@caption##1[##2]##3{%
+     \par
+     \begingroup\@parboxrestore
+     \if@minipage\@setminipage\fi
+     \normalsize \@makecaption{\AlCapSty{\AlCapFnt\algorithmcfname}}{\ignorespaces ##3}%
+     \par\endgroup
+   }}
+  {\end{algorithm}}
+\makeatother
+%++++++++++++++++++++++++++++++++++++++++
+% title stuff
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+    \begin{flushleft}
+        {\Large\textbf{\@title}} \\ \vskip0.2cm
+        \begingroup
+            \fontsize{12pt}{12pt}\selectfont
+            \courseNumber: \courseName 
+        \endgroup \vskip0.3cm
+        \dueDate \hfill\rlap{}\textbf{\name} \\ \vskip0.1cm
+        \hrulefill
+    \end{flushleft}\egroup 
+}
+\makeatother
+
+\title{\psetName}
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+\section{Number Partition}
+\begin{compprob}[h]
+        \SetKwInOut{Output}{Output~}
+        \SetKwInOut{Input}{Input~}
+		\Input{A sequence of $n$ numbers $A = \{a_1, a_2, \ldots, a_n\}$}
+                        \Output{A sequence of $n$ numbers $S = \{s_1, s_2, \ldots, s_n\}$ of signs $s_i \in \set*{+1,
+                            -1}$ such that the residual sum of the numbers in $A$ is minimized.}
+                            \caption{Number Partition}
+\end{compprob}
+\begin{claim}
+    \texttt{Number Partition} can be solved in pseudo-polynomial time. 
+\end{claim}
+\begin{proof}
+   Suppose the sequence of terms in $A$ sum up to some number  $b$. Then each of the numbers in  $A$ has at most  $\log
+   b$ bits. We will show there exists a dynamic programming algorithm that solves the \texttt{Number Partition} problem
+   that takes time polynomial $nb$:
+   \begin{itemize}
+       \item \textbf{Subproblems:} Let $D[i,j]$ be whether it is possible for  $A[0,i]$ to sum up to $j$.
+   
+  \item \textbf{Recurrence:} The recurrence relation is given by:
+    \[
+   D[i,j] = D[i-1,j+a_i] \lor D[i-1,j-a_i]
+   \] 
+    Our recurrence is correct because if $D[i-1,j+a_i]$ is true, then we can subtract $a_i$ from the sum to get $j$.
+    Similarly, if $D[i-1,j-a_i]$ is true, then we can add $a_i$ to the sum to get $j$. In doing so, we obtain every
+    possible sum of the first $i$ elements of $A$.
+
+   \item\textbf{Topological Order:} We solve the subproblems in increasing order of $i$ and $j$.
+
+    \item\textbf{Base Case:} $D[0,0] = \text{True}$ and $D[i,j] = \text{False}$ for all other $i,j$.
+
+    \item\textbf{Original:} The original problem is to find the smallest $j$ such that $D[n,j]$ is true.
+
+   \item \textbf{Time Complexity:} The time complexity of this algorithm is $O(nb)$. This is because for each
+    subproblem we check if $b$ sums are possible (The maximum sum is $b$). When checking if a sum is possible, we
+    take  $O(1)$ time to check 2 previous subproblems. Thus, the total time complexity is $O(nb)$.
+   \end{itemize}
+    Therefore, the \texttt{Number Partition} problem can be solved in pseudo-polynomial time.
+\end{proof}
+\end{document}
