@@ -31,6 +31,6 @@ if __name__ == '__main__':
     with open(input_file, 'r') as f:
         input_file = [int(line.strip()) for line in f]
 
-    print(algorithms.algs[algorithm](input_file))
+    print(algs[algorithm](input_file))
 
 
