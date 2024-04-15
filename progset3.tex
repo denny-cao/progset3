@@ -167,7 +167,9 @@
 
    \item \textbf{Time Complexity:} The time complexity of this algorithm is $O(nb)$. This is because for each
     subproblem we check if $b$ sums are possible (The maximum sum is $b$). When checking if a sum is possible, we
-    take  $O(1)$ time to check 2 previous subproblems. Thus, the total time complexity is $O(nb)$.
+    take  $O(1)$ time to check 2 previous subproblems. Thus, the total time complexity is $O(nb)$ to fill the
+    table. Iterating to find the smallest $j$ such that $D[n,j]$ is true takes $O(b)$ time. Therefore, the total time
+    complexity is $O(nb) + O(b) = O(nb)$.
    \end{itemize}
     Therefore, the \texttt{Number Partition} problem can be solved in pseudo-polynomial time.
 \end{proof}
