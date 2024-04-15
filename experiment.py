@@ -6,9 +6,9 @@ import prepartition_algs
 from kk import karmarkar_karp
 
 INSTANCES = 5 # Required: 50
-ITERATIONS = 500 # Required: 25000
+ITERATIONS = 2500000 # Required: 25000
 INPUT_SIZE = 5 # Required: 100
-MAX_VALUE = 100
+MAX_VALUE = 20
 
 def experiment_record():
     # TODO: Implement this function to store data
@@ -31,9 +31,9 @@ def experiment():
         simulated_annealing_result = standard_algs.simulated_annealing(data, ITERATIONS)
         # print(f"Simulated annealing result: {simulated_annealing_result}")
 
-        print(f"Repeated random residual: {standard_algs.standard_to_residue(data, repeated_random_result)}")
-        print(f"Hill climbing residual: {standard_algs.standard_to_residue(data, hill_climbing_result)}")
-        print(f"Simulated annealing residual: {standard_algs.standard_to_residue(data, simulated_annealing_result)}")
+        print(f"Repeated random residual: {karmarkar_karp(repeated_random_result)}")
+        print(f"Hill climbing residual: {karmarkar_karp(hill_climbing_result)}")
+        print(f"Simulated annealing residual: {karmarkar_karp(simulated_annealing_result)}")
         
         # Part 3: Find result from prepartition algorithms
         repeated_random_pp_result = prepartition_algs.repeated_random(data, ITERATIONS)
@@ -43,9 +43,14 @@ def experiment():
         simulated_annealing_pp_result = prepartition_algs.simulated_annealing(data, ITERATIONS)
         # print(f"Simulated annealing prepartition result: {simulated_annealing_pp_result}")
 
-        print(f"Repeated random prepartition residual: {standard_algs.standard_to_residue(data, prepartition_algs.prepartition_to_standard(data, repeated_random_pp_result))}")
-        print(f"Hill climbing prepartition residual: {standard_algs.standard_to_residue(data, prepartition_algs.prepartition_to_standard(data, hill_climbing_pp_result))}")
-        print(f"Simulated annealing prepartition residual: {standard_algs.standard_to_residue(data, prepartition_algs.prepartition_to_standard(data, simulated_annealing_pp_result))}")
+        converted_repeated_random_pp_result = prepartition_algs.prepartition_to_standard(data, repeated_random_pp_result)
+        converted_hill_climbing_pp_result = prepartition_algs.prepartition_to_standard(data, hill_climbing_pp_result)
+        converted_simulated_annealing_pp_result = prepartition_algs.prepartition_to_standard(data, simulated_annealing_pp_result)
+
+        print(f"Repeated random prepartition residual: {karmarkar_karp(converted_repeated_random_pp_result)}")
+        print(f"Hill climbing prepartition residual: {karmarkar_karp(converted_hill_climbing_pp_result)}")
+        print(f"Simulated annealing prepartition residual: {karmarkar_karp(converted_simulated_annealing_pp_result)}")
+
 
 if __name__ == "__main__":
     experiment()

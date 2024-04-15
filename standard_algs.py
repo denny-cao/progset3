@@ -34,20 +34,6 @@ def random_neighbor(S: list[int]) -> list[int]:
     S[j] *= random.choice([-1, 1])
     return S
 
-def standard_to_residue(S: list[int], A: list[int]) -> int:
-    """
-    Convert a standard solution to the residue of the input list.
-
-    Args:
-    S: Solution in standard form
-    A: Input list of integers
-
-    Returns:
-    int: Residue of A given S
-    """
-
-    return np.multiply(S, A).sum()
-
 ##########################################################################################
 # Algorithms #############################################################################
 ##########################################################################################
