@@ -1,5 +1,7 @@
 import sys
-import algorithms
+import kk
+import standard_algs
+import prepartitioned_algs
 
 if __name__ == '__main__':
     argv = sys.argv
@@ -11,13 +13,13 @@ if __name__ == '__main__':
 
     algorithm = argv[2]
     algs = {
-        0: 'karmarkar_karp',
-        1: 'repeat_random',
-        2: 'hill_climbing',
-        3: 'simulated_annealing'
-        11: 'prepartitioned_repeat_random',
-        12: 'prepartitioned_hill_climbing',
-        13: 'prepartitioned_simulated_annealing'
+        0: 'kk.karmarkar_karp',
+        1: 'standard_algs.repeat_random',
+        2: 'standard_algs.hill_climbing',
+        3: 'standard_algs.simulated_annealing'
+        11: 'prepartitioned_algs.repeat_random',
+        12: 'prepartitioned_algs.hill_climbing',
+        13: 'prepartitioned_algs.simulated_annealing'
     }
 
     if algorithm not in algs:

@@ -2,6 +2,8 @@ import random
 import numpy as np
 from kk import karmarkar_karp
 
+MAX_ITER = 25000
+
 ##########################################################################################
 # Helper Functions #######################################################################
 ##########################################################################################
@@ -55,7 +57,7 @@ def random_neighbor(P: list[int]) -> list[int]:
 ##########################################################################################
 # Algorithms #############################################################################
 ##########################################################################################
-def repeated_random(A: list[int], max_iter: int) -> int:
+def repeated_random(A: list[int], max_iter: int=MAX_ITER) -> int:
     """
     Repeated Random: Randomly generate a solution and evaluate its residue. Repeat this num_iter times and
     return the best residue.
@@ -79,7 +81,7 @@ def repeated_random(A: list[int], max_iter: int) -> int:
 
     return S
 
-def hill_climbing(A: list[int], max_iter: int) -> int:
+def hill_climbing(A: list[int], max_iter: int=MAX_ITER) -> int:
     """
     Generate a random solution to the problem, and then attempt to improve it through moves to better neighbors.
 
@@ -102,7 +104,7 @@ def hill_climbing(A: list[int], max_iter: int) -> int:
 
     return S
 
-def simulated_annealing(A: list[int], max_iter: int) -> int:
+def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
     """
     Generate a random solution to the problem, and then attempt to improve it through moves to neighbors, that are not always better.
 

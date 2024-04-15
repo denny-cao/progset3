@@ -7,7 +7,7 @@ from kk import karmarkar_karp
 
 INSTANCES = 5 # Required: 50
 ITERATIONS = 2500000 # Required: 25000
-INPUT_SIZE = 5 # Required: 100
+INPUT_SIZE = 3 # Required: 100
 MAX_VALUE = 20
 
 def experiment_record():
