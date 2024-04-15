@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
     flag = argv[1] # Autograder uses 0 but use others to debug
 
-    algorithm = argv[2]
+    algorithm = int(argv[2])
     algs = {
         0: 'kk.karmarkar_karp',
         1: 'standard_algs.repeat_random',
