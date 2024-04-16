@@ -132,7 +132,7 @@ def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
         elif np.random.rand() < np.exp((residue_P - residue_P_prime) / T):
             P = P_prime
 
-        residue_P_double_prime = karmarkar_karp(P_double_prime)
+        residue_P_double_prime = residue_prepartition(A, P_double_prime)
         if residue_P_prime < residue_P_double_prime:
             P_double_prime = P_prime
 
