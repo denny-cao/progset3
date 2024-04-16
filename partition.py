@@ -37,7 +37,7 @@ if __name__ == '__main__':
     elif algorithm in [1, 2, 3]:
 #        result = kk.karmarkar_karp(algs[algorithm](input_file))
         result = standard_algs.residue(algs[algorithm](input_file), input_file)
-   else:
+    else:
         result = prepartition_algs.residue_prepartition(algs[algorithm](input_file), input_file)
 
     print(result)
