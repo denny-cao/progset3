@@ -16,7 +16,7 @@ if __name__ == '__main__':
         0: 'kk.karmarkar_karp',
         1: 'standard_algs.repeat_random',
         2: 'standard_algs.hill_climbing',
-        3: 'standard_algs.simulated_annealing'
+        3: 'standard_algs.simulated_annealing',
         11: 'prepartitioned_algs.repeat_random',
         12: 'prepartitioned_algs.hill_climbing',
         13: 'prepartitioned_algs.simulated_annealing'
