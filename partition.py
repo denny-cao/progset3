@@ -31,6 +31,16 @@ if __name__ == '__main__':
     with open(input_file, 'r') as f:
         input_file = [int(line.strip()) for line in f]
 
-    print(algs[algorithm](input_file))
+    result = None
+    if algorithm == 0:
+        result = algs[algorithm](input_file)
+    elif algorithm in [1, 2, 3]:
+        result = kk.karmarkar_karp(algs[algorithm](input_file))
+    else:
+        result = kk.karmarkar_karp(prepartition_to_standard(algs[algorithm](input_file)))
+
+    print(result)
+
+
 
 
