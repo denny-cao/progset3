@@ -37,7 +37,7 @@ if __name__ == '__main__':
     elif algorithm in [1, 2, 3]:
         result = kk.karmarkar_karp(algs[algorithm](input_file))
     else:
-        result = kk.karmarkar_karp(prepartition_to_standard(algs[algorithm](input_file)))
+        result = kk.karmarkar_karp(prepartition_algs.prepartition_to_standard(algs[algorithm](input_file)))
 
     print(result)
 
