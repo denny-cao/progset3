@@ -40,13 +40,13 @@ def random_neighbor(P: list[int]) -> list[int]:
 
     return P_copy
 
-def residue_prepartition(P: list[int], A: list[int]) -> int:
+def residue_prepartition(A: list[int], P: list[int]) -> int:
     """
     Calculate residue of prepartition.
 
     Args:
-    P: Prepartition of input list
     A: Input list of integers
+    P: Prepartition of input list
 
     Returns:
     int: Residue of prepartition
