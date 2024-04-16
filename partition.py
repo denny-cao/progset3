@@ -1,7 +1,7 @@
 import sys
 import kk
 import standard_algs
-import prepartitioned_algs
+import prepartition_algs
 
 if __name__ == '__main__':
     argv = sys.argv
