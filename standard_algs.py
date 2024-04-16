@@ -97,6 +97,7 @@ def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
     Returns:
     int: Least residue of input_list
     """
+    T = 10**10 * ((0.8)**(max_iter//300))
 
     S = random_solution(A)
     S_double_prime = S
@@ -107,7 +108,7 @@ def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
 
         if residue_S_prime < residue_S:
             S = S_prime
-        elif np.random.rand() < np.exp((residue_S - residue_S_prime) / 100):
+        elif np.random.rand() < np.exp((residue_S - residue_S_prime) / T):
             S = S_prime
 
         residue_S_double_prime = karmarkar_karp(S_double_prime)

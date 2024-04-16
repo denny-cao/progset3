@@ -14,10 +14,10 @@ if __name__ == '__main__':
     algorithm = int(argv[2])
     algs = {
         0: kk.karmarkar_karp,
-        1: standard_algs.repeat_random,
+        1: standard_algs.repeated_random,
         2: standard_algs.hill_climbing,
         3: standard_algs.simulated_annealing,
-        11: prepartition_algs.repeat_random,
+        11: prepartition_algs.repeated_random,
         12: prepartition_algs.hill_climbing,
         13: prepartition_algs.simulated_annealing
     }
