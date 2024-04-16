@@ -36,7 +36,7 @@ def random_neighbor(S: list[int]) -> list[int]:
     S[j] *= random.choice([-1, 1])
     return S
 
-def solution_to_residue(S: list[int], A: list[int]) -> int:
+def residue(S: list[int], A: list[int]) -> int:
     """
     Calculate the residue of a solution.
     Args:
@@ -45,7 +45,13 @@ def solution_to_residue(S: list[int], A: list[int]) -> int:
     Returns:
     int: Residue of the solution
     """
-    return np.multiply(S, A).sum()
+
+    sum = 0
+    for i in range(len(S)):
+        sum += S[i] * A[i]
+
+    return abs(sum)
+
 ##########################################################################################
 # Algorithms #############################################################################
 ##########################################################################################
@@ -65,7 +71,7 @@ def repeated_random(A: list[int], max_iter: int=MAX_ITER) -> int:
     for _ in range(max_iter):
         S_prime = random_solution(A)
 
-        residue_S_prime, residue_S = solution_to_residue(S_prime, A), solution_to_residue(S, A)
+        residue_S_prime, residue_S = residue(S_prime, A), residue(S, A)
         if residue_S_prime < residue_S:
             S = S_prime
         if residue_S == 0:
@@ -88,7 +94,7 @@ def hill_climbing(A: list[int], max_iter: int=MAX_ITER) -> int:
     for _ in range(max_iter):
         S_prime = random_neighbor(S)
 
-        residue_S_prime, residue_S = solution_to_residue(S_prime, A), solution_to_residue(S, A)
+        residue_S_prime, residue_S = residue(S_prime, A), residue(S, A)
         if residue_S_prime < residue_S:
             S = S_prime
         if residue_S == 0:
@@ -115,13 +121,13 @@ def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
     for _ in range(max_iter):
         S_prime = random_neighbor(S)
 
-        residue_S_prime, residue_S = solution_to_residue(S_prime, A), solution_to_residue(S, A)
+        residue_S_prime, residue_S = residue(S_prime, A), residue(S, A)
         if residue_S_prime < residue_S:
             S = S_prime
         elif np.random.rand() < np.exp((residue_S - residue_S_prime) / T):
             S = S_prime
 
-        residue_S_double_prime = solution_to_residue(S_double_prime, A)
+        residue_S_double_prime = residue(S_double_prime, A)
         if residue_S_prime < residue_S_double_prime:
             S_double_prime = S_prime
 
