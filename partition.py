@@ -39,9 +39,7 @@ if __name__ == '__main__':
         result = standard_algs.solution_to_residue(algs[algorithm](input_file), input_file)
     else:
 #        result = kk.karmarkar_karp(prepartition_algs.prepartition_to_standard(algs[algorithm](input_file)))
-         result =
-        standard_algs.solution_to_residue(prepartition_algs.prepartition_to_standard(algs[algorithm](input_file)),
-                                          input_file)
+         result = standard_algs.solution_to_residue(prepartition_algs.prepartition_to_standard(algs[algorithm](input_file)), input_file)
 
     print(result)
 
