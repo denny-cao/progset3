@@ -40,20 +40,20 @@ def random_neighbor(P: list[int]) -> list[int]:
 
     return P_copy
 
-def residue_prepartition(A: list[int], P: list[int]) -> int:
+def residue_prepartition(P: list[int], A: list[int]) -> int:
     """
     Calculate residue of prepartition.
 
     Args:
-    A: Input list of integers
     P: Prepartition of input list
+    A: Input list of integers
 
     Returns:
     int: Residue of prepartition
     """
     A_prime = [0] * len(A)
     for j in range(len(A)):
-        A_prime[P[j] - 1] += A[j]
+        A_prime[P[j]] += A[j]
 
     return karmarkar_karp(A_prime)
 
@@ -72,17 +72,17 @@ def repeated_random(A: list[int], max_iter: int=MAX_ITER) -> int:
     Returns:
     int: Least residue of input_list
     """
-    S = random_solution(A)
+    P = random_solution(A)
     for _ in range(max_iter):
-        S_prime = random_solution(A)
-        residue_S_prime, residue_S = residue_prepartition(A, S_prime), residue_prepartition(A, S)
+        P_prime = random_solution(A)
+        residue_P_prime, residue_P = residue_prepartition(A, P_prime), residue_prepartition(A, P)
 
-        if residue_S_prime < residue_S:
-            S = S_prime
-        if residue_S == 0:
+        if residue_P_prime < residue_P:
+            P = P_prime
+        if residue_P == 0:
             break
 
-    return S
+    return P
 
 def hill_climbing(A: list[int], max_iter: int=MAX_ITER) -> int:
     """
@@ -95,17 +95,17 @@ def hill_climbing(A: list[int], max_iter: int=MAX_ITER) -> int:
     Returns:
     int: Least residue of A
     """
-    S = random_solution(A)
+    P = random_solution(A)
     for _ in range(max_iter):
-        S_prime = random_neighbor(S)
-        residue_S_prime, residue_S = residue_prepartition(A, S_prime), residue_prepartition(A, S)
+        P_prime = random_neighbor(P)
+        residue_P_prime, residue_P = residue_prepartition(A, P_prime), residue_prepartition(A, P)
 
-        if residue_S_prime < residue_S:
-            S = S_prime
-        if residue_S == 0:
+        if residue_P_prime < residue_P:
+            P = P_prime
+        if residue_P == 0:
             break
 
-    return S
+    return P
 
 def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
     """
@@ -120,23 +120,23 @@ def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
     """
     T = 10**10 * ((0.8)**(max_iter//300))
 
-    S = random_solution(A)
-    S_double_prime = S
+    P = random_solution(A)
+    P_double_prime = P
 
     for _ in range(max_iter):
-        S_prime = random_neighbor(S)
-        residue_S_prime, residue_S = residue_prepartition(A, S_prime), residue_prepartition(A, S)
+        P_prime = random_neighbor(P)
+        residue_P_prime, residue_P = residue_prepartition(A, P_prime), residue_prepartition(A, P)
 
-        if residue_S_prime < residue_S:
-            S = S_prime
-        elif np.random.rand() < np.exp((residue_S - residue_S_prime) / T):
-            S = S_prime
+        if residue_P_prime < residue_P:
+            P = P_prime
+        elif np.random.rand() < np.exp((residue_P - residue_P_prime) / T):
+            P = P_prime
 
-        residue_S_double_prime = karmarkar_karp(S_double_prime)
-        if residue_S_prime < residue_S_double_prime:
-            S_double_prime = S_prime
+        residue_P_double_prime = karmarkar_karp(P_double_prime)
+        if residue_P_prime < residue_P_double_prime:
+            P_double_prime = P_prime
 
-        if residue_S == 0:
+        if residue_P == 0:
             break
 
-    return S_double_prime
+    return P_double_prime
