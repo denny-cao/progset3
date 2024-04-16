@@ -1,14 +1,13 @@
-import algorithms
+import prepartition_algs 
 
-def test_KK():
-    A = [10,8,7,6,5]
-    print(algorithms.karmarkar_karp(A))
+def residue_test():
+    # Test residue function
+    A = [10, 8, 7,6, 5]
+    P = [1,2,2,4,5]
 
-def test_repeated_random():
-    A = [10,8,7,6,5]
-    print(algorithms.repeated_random(A,15))
+    assert prepartition_algs.residue_prepartition(A, P) == 4
 
 if __name__ == "__main__":
-    test_KK()
-    test_repeated_random()
+    residue_test()
+    print("All tests passed!")
 

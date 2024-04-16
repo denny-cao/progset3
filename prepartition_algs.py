@@ -7,23 +7,6 @@ MAX_ITER = 25000
 ##########################################################################################
 # Helper Functions #######################################################################
 ##########################################################################################
-def prepartition_to_standard(A: list[int], P: list[int]) -> list[int]:
-    """
-    Convert prepartition to standard representation.
-
-    Args:
-    A: Input list of integers 
-    P: Prepartition of input list
-
-    Returns:
-    list[int]: Standard representation of prepartition form
-    """
-    A_prime = [0] * len(A)
-    for j in range(len(A)):
-        A_prime[P[j]] += A[j]
-
-    return A_prime
-
 def random_solution(A: list[int]) -> list[int]:
     """
     Generate a random prepartitioning of the input list.
@@ -70,7 +53,7 @@ def residue_prepartition(A: list[int], P: list[int]) -> int:
     """
     A_prime = [0] * len(A)
     for j in range(len(A)):
-        A_prime[P[j]] += A[j]
+        A_prime[P[j] - 1] += A[j]
 
     return karmarkar_karp(A_prime)
 
