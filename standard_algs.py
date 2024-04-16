@@ -31,10 +31,12 @@ def random_neighbor(S: list[int]) -> list[int]:
     Returns:
     list[int]: Random neighbor of input solution in standard form
     """
+
+    S_copy = S.copy()
     i,j = random.sample(range(len(S)), 2)
-    S[i] *= -1
-    S[j] *= random.choice([-1, 1])
-    return S
+    S_copy[i] *= -1
+    S_copy[j] *= random.choice([-1, 1])
+    return S_copy
 
 def residue(S: list[int], A: list[int]) -> int:
     """
@@ -46,11 +48,11 @@ def residue(S: list[int], A: list[int]) -> int:
     int: Residue of the solution
     """
 
-    sum = 0
+    u = 0
     for i in range(len(S)):
-        sum += S[i] * A[i]
+        u += S[i] * A[i]
 
-    return abs(sum)
+    return abs(u)
 
 ##########################################################################################
 # Algorithms #############################################################################
