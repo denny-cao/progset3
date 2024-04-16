@@ -36,6 +36,16 @@ def random_neighbor(S: list[int]) -> list[int]:
     S[j] *= random.choice([-1, 1])
     return S
 
+def solution_to_residue(S: list[int], A: list[int]) -> int:
+    """
+    Calculate the residue of a solution.
+    Args:
+    S: Solution in standard form
+    A: Input list of integers
+    Returns:
+    int: Residue of the solution
+    """
+    return np.multiply(S, A).sum()
 ##########################################################################################
 # Algorithms #############################################################################
 ##########################################################################################
