@@ -17,9 +17,9 @@ if __name__ == '__main__':
         1: 'standard_algs.repeat_random',
         2: 'standard_algs.hill_climbing',
         3: 'standard_algs.simulated_annealing',
-        11: 'prepartitioned_algs.repeat_random',
-        12: 'prepartitioned_algs.hill_climbing',
-        13: 'prepartitioned_algs.simulated_annealing'
+        11: 'prepartition_algs.repeat_random',
+        12: 'prepartition_algs.hill_climbing',
+        13: 'prepartition_algs.simulated_annealing'
     }
 
     if algorithm not in algs:
