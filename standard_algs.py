@@ -32,7 +32,7 @@ def random_neighbor(S: list[int]) -> list[int]:
     list[int]: Random neighbor of input solution in standard form
     """
     i,j = random.sample(range(len(S)), 2)
-    S[i] *= random.choice([-1, 1])
+    S[i] *= -1
     S[j] *= random.choice([-1, 1])
     return S
 
