@@ -118,8 +118,8 @@ def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
     Returns:
     int: Least residue of input_list
     """
-    T = 10**10 * ((0.8)**(max_iter//300))
-
+    T = 10**10 * ((0.8)**((max_iter)//300))
+    print(T)
     P = random_solution(A)
     P_double_prime = P
 

@@ -1,6 +1,7 @@
 import random
 import heapq
 import numpy as np
+import math
 from kk import karmarkar_karp
 
 MAX_ITER = 25000
@@ -115,8 +116,7 @@ def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
     Returns:
     int: Least residue of input_list
     """
-    T = 10**10 * ((0.8)**(max_iter//300))
-
+    T = (10**10) * ((0.8)**(((max_iter)//300)) * 1.0)
     S = random_solution(A)
     S_double_prime = S
 
