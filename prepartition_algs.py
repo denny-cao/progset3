@@ -52,7 +52,7 @@ def residue(P: np.ndarray, A: np.ndarray) -> np.int64:
     for j in range(len(A)):
         A_prime[P[j]] += A[j]
 
-    return karmarkar_karp(A_prime)
+    return int(karmarkar_karp(A_prime))
 
 ##########################################################################################
 # Algorithms #############################################################################
