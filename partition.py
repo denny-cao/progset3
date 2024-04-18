@@ -2,6 +2,7 @@ import sys
 import kk
 import standard_algs
 import prepartition_algs
+import numpy as np
 
 if __name__ == '__main__':
     argv = sys.argv
