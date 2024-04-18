@@ -72,7 +72,7 @@ def repeated_random(A: np.ndarray, max_iter: int=MAX_ITER) -> np.int64:
     P = random_solution(A)
     for _ in range(max_iter):
         P_prime = random_solution(A)
-        residue_P_prime, residue_P = residue(P, A), residue(P_prime, A)
+        residue_P_prime, residue_P = residue(P_prime, A), residue(P, A)
 
         if residue_P_prime < residue_P:
             P = P_prime
