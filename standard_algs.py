@@ -51,6 +51,18 @@ def residue(S: np.ndarray, A: np.ndarray) -> np.int64:
 
     return np.abs(np.dot(S, A))
 
+def T(n: np.int64) -> np.float64:
+    """
+    Temperature function for simulated annealing.
+
+    Args:
+    n: Number of iterations
+
+    Returns:
+    float: Temperature at iteration n
+    """
+    return 10**10 * ((0.8)**(np.floor(n/300)))
+
 ##########################################################################################
 # Algorithms #############################################################################
 ##########################################################################################
@@ -72,7 +84,7 @@ def repeated_random(A: np.ndarray, max_iter: int=MAX_ITER) -> int:
 
         residue_S_prime, residue_S = residue(S_prime, A), residue(S, A)
         if residue_S_prime < residue_S:
-            S = S_prime
+            S = S_prime.copy()
         if residue_S == 0:
             break
 
@@ -95,7 +107,7 @@ def hill_climbing(A: np.ndarray, max_iter: int=MAX_ITER) -> int:
 
         residue_S_prime, residue_S = residue(S_prime, A), residue(S, A)
         if residue_S_prime < residue_S:
-            S = S_prime
+            S = S_prime.copy()
         if residue_S == 0:
             break
 
@@ -113,21 +125,20 @@ def simulated_annealing(A: np.ndarray, max_iter: int=MAX_ITER) -> np.ndarray:
     np.ndarray: Least residue of A
     """
     S = random_solution(A)
-    S_double_prime = S
+    S_double_prime = S.copy()
 
     for iter in range(max_iter):
-        T = (10**10) * ((0.8)**(np.floor(iter/300)))
         S_prime = random_neighbor(S)
 
         residue_S_prime, residue_S = residue(S_prime, A), residue(S, A)
         if residue_S_prime < residue_S:
-            S = S_prime
-        elif np.random.rand() < np.exp(-(residue_S_prime - residue_S) / T):
-            S = S_prime
+            S = S_prime.copy()
+        elif np.random.rand() < np.exp(-(residue_S_prime - residue_S) / T(iter)):
+            S = S_prime.copy()
 
         residue_S_double_prime = residue(S_double_prime, A)
-        if residue_S_prime < residue_S_double_prime:
-            S_double_prime = S_prime
+        if residue_S < residue_S_double_prime:
+            S_double_prime = S_prime.copy()
 
         if residue_S == 0:
             break

@@ -74,7 +74,7 @@ def repeated_random(A: np.ndarray, max_iter: int=MAX_ITER) -> np.int64:
         residue_P_prime, residue_P = residue(P_prime, A), residue(P, A)
 
         if residue_P_prime < residue_P:
-            P = P_prime
+            P = P_prime.copy()
         if residue_P == 0:
             break
 
@@ -97,11 +97,24 @@ def hill_climbing(A: np.ndarray, max_iter: int=MAX_ITER) -> np.int64:
         residue_P_prime, residue_P = residue(P_prime, A), residue(P, A)
 
         if residue_P_prime < residue_P:
-            P = P_prime
+            P = P_prime.copy()
         if residue_P == 0:
             break
 
     return P
+
+def T(n: int) -> float:
+    """
+    Temperature function for simulated annealing.
+
+    Args:
+    n: Number of iterations
+
+    Returns:
+    float: Temperature at iteration n
+    """
+    return 10**10 * ((0.8)**(np.floor(n/300)))
+
 
 def simulated_annealing(A: np.ndarray, max_iter: int=MAX_ITER) -> np.ndarray:
     """
@@ -115,21 +128,20 @@ def simulated_annealing(A: np.ndarray, max_iter: int=MAX_ITER) -> np.ndarray:
     np.ndarray: Least residue of A
     """
     P = random_solution(A)
-    P_double_prime = P
+    P_double_prime = P.copy()
 
     for iter in range(max_iter):
-        T = 10**10 * ((0.8)**(np.floor(iter/300)))
         P_prime = random_neighbor(P)
         residue_P_prime, residue_P = residue(P_prime, A), residue(P, A)
 
         if residue_P_prime < residue_P:
-            P = P_prime
-        elif np.random.rand() < np.exp(-(residue_P_prime - residue_P)/T):
-            P = P_prime
+            P = P_prime.copy()
+        elif np.random.rand() < np.exp(-(residue_P_prime - residue_P)/T(iter)):
+            P = P_prime.copy() 
 
         residue_P_double_prime = residue(P_double_prime, A)
-        if residue_P_prime < residue_P_double_prime:
-            P_double_prime = P_prime
+        if residue_P < residue_P_double_prime:
+            P_double_prime = P_prime.copy()
 
         if residue_P == 0:
             break

@@ -12,7 +12,7 @@ INPUT_SIZE = 100
 MAX_VALUE = 10**12
 
 def experiment_record():
-    with open('experiment.csv', mode='w') as file:
+    with open('experiment3.csv', mode='w') as file:
         writer = csv.writer(file)
         writer.writerow(["KK", "Repeated Random", "Hill Climbing", "Simulated Annealing", "Repeated Random PP", "Hill Climbing PP", "Simulated Annealing PP"])
 
