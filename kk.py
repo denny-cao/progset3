@@ -1,6 +1,7 @@
 import heapq
+import numpy as np
 
-def karmarkar_karp(A: list[int]) -> int:
+def karmarkar_karp(A: np.ndarray) -> int:
     """
     Differencing: Take two elements from A, a_i and a_j, and replace the larger by abs(a_i - a_j) while replacing the smaller by 0. Repeat this until only one element remains. Take largest 2 elements and difference.
 

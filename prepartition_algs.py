@@ -32,7 +32,7 @@ def random_neighbor(P: np.ndarray) -> np.ndarray:
     """
 
     P_copy = P.copy()
-    i,j = random.sample(range(len(S)), 2)
+    i,j = random.sample(range(len(P)), 2)
     P_copy[i] = j
 
     return P_copy
