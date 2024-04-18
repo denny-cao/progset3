@@ -1,7 +1,7 @@
 import random
 import numpy as np
 from kk import karmarkar_karp
-
+from decimal import *
 MAX_ITER = 25000
 
 ##########################################################################################
@@ -40,13 +40,13 @@ def random_neighbor(P: list[int]) -> list[int]:
 
     return P_copy
 
-def residue_prepartition(A: list[int], P: list[int]) -> int:
+def residue(P: list[int], A: list[int]) -> int:
     """
     Calculate residue of prepartition.
 
     Args:
-    A: Input list of integers
     P: Prepartition of input list
+    A: Input list of integers
 
     Returns:
     int: Residue of prepartition
@@ -75,7 +75,7 @@ def repeated_random(A: list[int], max_iter: int=MAX_ITER) -> int:
     P = random_solution(A)
     for _ in range(max_iter):
         P_prime = random_solution(A)
-        residue_P_prime, residue_P = residue_prepartition(A, P_prime), residue_prepartition(A, P)
+        residue_P_prime, residue_P = residue(P, A), residue(P_prime, A)
 
         if residue_P_prime < residue_P:
             P = P_prime
@@ -98,7 +98,7 @@ def hill_climbing(A: list[int], max_iter: int=MAX_ITER) -> int:
     P = random_solution(A)
     for _ in range(max_iter):
         P_prime = random_neighbor(P)
-        residue_P_prime, residue_P = residue_prepartition(A, P_prime), residue_prepartition(A, P)
+        residue_P_prime, residue_P = residue(P_prime, A), residue(P, A)
 
         if residue_P_prime < residue_P:
             P = P_prime
@@ -118,21 +118,23 @@ def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
     Returns:
     int: Least residue of input_list
     """
-    T = 10**10 * ((0.8)**((max_iter)//300))
+    # T = 10**10 * ((0.8)**((max_iter)//300))
+    # Using Decimal to avoid floating point errors
+    T = Decimal(10**10) * Decimal((0.8)**((max_iter)//300))
     print(T)
     P = random_solution(A)
     P_double_prime = P
 
     for _ in range(max_iter):
         P_prime = random_neighbor(P)
-        residue_P_prime, residue_P = residue_prepartition(A, P_prime), residue_prepartition(A, P)
+        residue_P_prime, residue_P = residue(P_prime, A), residue(P, A)
 
         if residue_P_prime < residue_P:
             P = P_prime
-        elif np.random.rand() < np.exp((residue_P - residue_P_prime) / T):
+        elif np.random.rand() < np.exp(Decimal(residue_P - residue_P_prime) / T):
             P = P_prime
 
-        residue_P_double_prime = residue_prepartition(A, P_double_prime)
+        residue_P_double_prime = residue(P_double_prime, A)
         if residue_P_prime < residue_P_double_prime:
             P_double_prime = P_prime
 

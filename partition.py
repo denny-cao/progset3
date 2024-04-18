@@ -38,6 +38,6 @@ if __name__ == '__main__':
 #        result = kk.karmarkar_karp(algs[algorithm](input_file))
         result = standard_algs.residue(algs[algorithm](input_file), input_file)
     else:
-        result = prepartition_algs.residue_prepartition(input_file, algs[algorithm](input_file))
+        result = prepartition_algs.residue(algs[algorithm](input_file), input_file)
 
     print(result)
