@@ -3,7 +3,6 @@ import numpy as np
 from decimal import *
 
 MAX_ITER = 25000
-T = (10**10) * ((0.8)**(np.floor(MAX_ITER/300)))
 
 ##########################################################################################
 # Helper Functions #######################################################################
@@ -116,7 +115,8 @@ def simulated_annealing(A: np.ndarray, max_iter: int=MAX_ITER) -> np.ndarray:
     S = random_solution(A)
     S_double_prime = S
 
-    for _ in range(max_iter):
+    for iter in range(max_iter):
+        T = (10**10) * ((0.8)**(np.floor(iter/300)))
         S_prime = random_neighbor(S)
 
         residue_S_prime, residue_S = residue(S_prime, A), residue(S, A)

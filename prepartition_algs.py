@@ -3,7 +3,6 @@ import numpy as np
 from kk import karmarkar_karp
 
 MAX_ITER = 25000
-T = 10**10 * ((0.8)**(np.floor(MAX_ITER/300)))
 ##########################################################################################
 # Helper Functions #######################################################################
 ##########################################################################################
@@ -118,7 +117,8 @@ def simulated_annealing(A: np.ndarray, max_iter: int=MAX_ITER) -> np.ndarray:
     P = random_solution(A)
     P_double_prime = P
 
-    for _ in range(max_iter):
+    for iter in range(max_iter):
+        T = 10**10 * ((0.8)**(np.floor(iter/300)))
         P_prime = random_neighbor(P)
         residue_P_prime, residue_P = residue(P_prime, A), residue(P, A)
 

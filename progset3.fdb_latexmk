@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1713164134 "progset3.tex" "progset3.pdf" "progset3" 1713164136 0
+["pdflatex"] 1713429097 "progset3.tex" "progset3.pdf" "progset3" 1713429099 0
   "../../../evan.sty" 1709313351 29146 cc30f0c0d7cfc4900f543a3aa3f9df89 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -28,6 +28,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm" 1136768653 768 d7b9a2629a0c353102ad947dc9221d49 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1229303445 688 37338d6ab346c2f1466b29e195316aa4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm" 1229303445 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/yhmath/yhcmex10.tfm" 1136768653 1684 af67583ad46e8b1511363fd580d94047 ""
@@ -219,6 +220,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty" 1561238569 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/filecontents/filecontents.sty" 1569102703 3408 71173360dc73c4a3f80bb0bc7b926ba0 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/footmisc/footmisc.sty" 1646774737 21361 67512b0642debcd4503e59fcbbb767f1 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
@@ -320,10 +322,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1691249134 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1691249112 7883462 c2d7977eb14631b8f29056ae998dcde3 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "progset3.aux" 1713164136 1244 7c85c901098e1cd39f1a6018988f5c95 "pdflatex"
-  "progset3.out" 1713164136 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "progset3.pre" 1713164135 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "progset3.tex" 1713164133 6497 ee40a830e74d5d1a745b12db64b9518f ""
+  "data.png" 1713428655 538128 a36e29d38dd12255dd403c5ab8ad7ffe ""
+  "progset3.aux" 1713429099 3074 b2096386274ebeb80a38c1ada62641da "pdflatex"
+  "progset3.out" 1713429098 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "progset3.pre" 1713429097 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "progset3.tex" 1713429097 16483 def467c8d2b3a1e3f39e1631e16abec2 ""
   (generated)
   "progset3.aux"
   "progset3.log"
