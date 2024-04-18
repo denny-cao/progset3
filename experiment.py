@@ -4,6 +4,7 @@ import standard_algs
 import prepartition_algs
 from kk import karmarkar_karp
 from tqdm import tqdm
+import numpy as np
 
 INSTANCES = 50 # Required: 50
 ITERATIONS = 2500000 # Required: 25000
@@ -15,8 +16,9 @@ def experiment_record():
         writer = csv.writer(file)
         writer.writerow(["KK", "Repeated Random", "Hill Climbing", "Simulated Annealing", "Repeated Random PP", "Hill Climbing PP", "Simulated Annealing PP"])
 
-        for i in tqdm(range(INSTANCES)):
-            data = [random.randint(1, MAX_VALUE) for _ in range(INPUT_SIZE)]
+        #for i in tqdm(range(INSTANCES)):
+        for i in range(INSTANCES):
+            data = np.random.randint(1, MAX_VALUE, INPUT_SIZE)
     
             kk_result = karmarkar_karp(data)
 

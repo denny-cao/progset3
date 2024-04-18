@@ -29,7 +29,7 @@ if __name__ == '__main__':
     # Parse input file
     input_file = argv[3] # List of 100 (unsorted) integers, one per line
     with open(input_file, 'r') as f:
-        input_file = [int(line.strip()) for line in f]
+        input_file = np.array([int(x) for x in f.readlines()])
 
     result = None
     if algorithm == 0:

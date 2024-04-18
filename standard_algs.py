@@ -3,11 +3,12 @@ import numpy as np
 from decimal import *
 
 MAX_ITER = 25000
+T = (10**10) * ((0.8)**(np.floor(MAX_ITER/300)))
 
 ##########################################################################################
 # Helper Functions #######################################################################
 ##########################################################################################
-def random_solution(A: list[int]) -> list[int]:
+def random_solution(A: np.ndarray) -> np.ndarray:
     """
     Generate a random solution of -1 and 1.
 
@@ -18,9 +19,10 @@ def random_solution(A: list[int]) -> list[int]:
     list[int]: Random solution of A in standard form
     """
 
-    return [random.choice([-1, 1]) for _ in range(len(A))]
+    # return [random.choice([-1, 1]) for _ in range(len(A))]
+    return np.random.choice([-1, 1], size=len(A))
 
-def random_neighbor(S: list[int]) -> list[int]:
+def random_neighbor(S: np.ndarray) -> np.ndarray:
     """
     Generate a random neighbor of the input solution.
 
@@ -28,16 +30,17 @@ def random_neighbor(S: list[int]) -> list[int]:
     S: Input solution in standard form
 
     Returns:
-    list[int]: Random neighbor of input solution in standard form
+    np.ndarray: Random neighbor of input solution in standard form
     """
 
     S_copy = S.copy()
-    i,j = random.sample(range(len(S)), 2)
+    i,j = random.sample(range(len(S_copy)), 2)
     S_copy[i] *= -1
     S_copy[j] *= random.choice([-1, 1])
     return S_copy
 
-def residue(S: list[int], A: list[int]) -> int:
+
+def residue(S: np.ndarray, A: np.ndarray) -> np.int64:
     """
     Calculate the residue of a solution.
     Args:
@@ -47,16 +50,12 @@ def residue(S: list[int], A: list[int]) -> int:
     int: Residue of the solution
     """
 
-    u = 0
-    for i in range(len(S)):
-        u += S[i] * A[i]
-
-    return abs(u)
+    return np.abs(np.dot(S, A))
 
 ##########################################################################################
 # Algorithms #############################################################################
 ##########################################################################################
-def repeated_random(A: list[int], max_iter: int=MAX_ITER) -> int:
+def repeated_random(A: np.ndarray, max_iter: int=MAX_ITER) -> int:
     """
     Repeated Random: Randomly generate a solution and evaluate its residue. Repeat this num_iter times and
     return the best residue.
@@ -80,7 +79,7 @@ def repeated_random(A: list[int], max_iter: int=MAX_ITER) -> int:
 
     return S
 
-def hill_climbing(A: list[int], max_iter: int=MAX_ITER) -> int:
+def hill_climbing(A: np.ndarray, max_iter: int=MAX_ITER) -> int:
     """
     Generate a random solution to the problem, and then attempt to improve it through moves to better neighbors.
 
@@ -103,7 +102,7 @@ def hill_climbing(A: list[int], max_iter: int=MAX_ITER) -> int:
 
     return S
 
-def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
+def simulated_annealing(A: np.ndarray, max_iter: int=MAX_ITER) -> np.ndarray:
     """
     Generate a random solution to the problem, and then attempt to improve it through moves to neighbors, that are not always better.
 
@@ -112,11 +111,8 @@ def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
     max_iter: Number of iterations
 
     Returns:
-    int: Least residue of input_list
+    np.ndarray: Least residue of A
     """
-    # T = (10**10) * ((0.8)**(((max_iter)//300)) * 1.0)
-    # Compute T with Decimal to avoid floating point errors
-    T = Decimal(10**10) * (Decimal(0.8)**(Decimal(max_iter)//Decimal(300)))
     S = random_solution(A)
     S_double_prime = S
 
@@ -126,7 +122,7 @@ def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
         residue_S_prime, residue_S = residue(S_prime, A), residue(S, A)
         if residue_S_prime < residue_S:
             S = S_prime
-        elif np.random.rand() < np.exp(Decimal(residue_S - residue_S_prime) / T):
+        elif np.random.rand() < np.exp(-(residue_S_prime - residue_S) / T):
             S = S_prime
 
         residue_S_double_prime = residue(S_double_prime, A)

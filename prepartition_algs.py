@@ -1,13 +1,13 @@
 import random
 import numpy as np
 from kk import karmarkar_karp
-from decimal import *
-MAX_ITER = 25000
 
+MAX_ITER = 25000
+T = 10**10 * ((0.8)**(np.floor(MAX_ITER/300)))
 ##########################################################################################
 # Helper Functions #######################################################################
 ##########################################################################################
-def random_solution(A: list[int]) -> list[int]:
+def random_solution(A: np.ndarray) -> np.ndarray:
     """
     Generate a random prepartitioning of the input list.
 
@@ -15,12 +15,12 @@ def random_solution(A: list[int]) -> list[int]:
     A: Input list of integers
 
     Returns:
-    list[int]: Random solution of A in prepartition form
+    np.ndarray: Random solution of A in prepartition form
     """
 
-    return [random.randint(0, len(A) - 1) for _ in range(len(A))]
+    return np.random.randint(0, len(A), len(A))
 
-def random_neighbor(P: list[int]) -> list[int]:
+def random_neighbor(P: np.ndarray) -> np.ndarray:
     """
     Random move on prepartitioning.
 
@@ -32,15 +32,12 @@ def random_neighbor(P: list[int]) -> list[int]:
     """
 
     P_copy = P.copy()
-
-    i,j = random.randint(0, len(P) - 1), random.randint(0, len(P) - 1)
-    while P_copy[i] == j:
-        j = random.randint(0, len(P) - 1)
+    i,j = random.sample(range(len(S)), 2)
     P_copy[i] = j
 
     return P_copy
 
-def residue(P: list[int], A: list[int]) -> int:
+def residue(P: np.ndarray, A: np.ndarray) -> np.int64:
     """
     Calculate residue of prepartition.
 
@@ -49,9 +46,9 @@ def residue(P: list[int], A: list[int]) -> int:
     A: Input list of integers
 
     Returns:
-    int: Residue of prepartition
+    np.int64: Residue of prepartition
     """
-    A_prime = [0] * len(A)
+    A_prime = np.zeros(len(A))
     for j in range(len(A)):
         A_prime[P[j]] += A[j]
 
@@ -60,7 +57,7 @@ def residue(P: list[int], A: list[int]) -> int:
 ##########################################################################################
 # Algorithms #############################################################################
 ##########################################################################################
-def repeated_random(A: list[int], max_iter: int=MAX_ITER) -> int:
+def repeated_random(A: np.ndarray, max_iter: int=MAX_ITER) -> np.int64:
     """
     Repeated Random: Randomly generate a solution and evaluate its residue. Repeat this num_iter times and
     return the best residue.
@@ -70,7 +67,7 @@ def repeated_random(A: list[int], max_iter: int=MAX_ITER) -> int:
     max_iter: Number of iterations
 
     Returns:
-    int: Least residue of input_list
+    np.int64: Least residue of input_list
     """
     P = random_solution(A)
     for _ in range(max_iter):
@@ -84,7 +81,7 @@ def repeated_random(A: list[int], max_iter: int=MAX_ITER) -> int:
 
     return P
 
-def hill_climbing(A: list[int], max_iter: int=MAX_ITER) -> int:
+def hill_climbing(A: np.ndarray, max_iter: int=MAX_ITER) -> np.int64:
     """
     Generate a random solution to the problem, and then attempt to improve it through moves to better neighbors.
 
@@ -107,7 +104,7 @@ def hill_climbing(A: list[int], max_iter: int=MAX_ITER) -> int:
 
     return P
 
-def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
+def simulated_annealing(A: np.ndarray, max_iter: int=MAX_ITER) -> np.ndarray:
     """
     Generate a random solution to the problem, and then attempt to improve it through moves to neighbors, that are not always better.
 
@@ -116,12 +113,8 @@ def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
     max_iter: Number of iterations
 
     Returns:
-    int: Least residue of input_list
+    np.ndarray: Least residue of A
     """
-    # T = 10**10 * ((0.8)**((max_iter)//300))
-    # Using Decimal to avoid floating point errors
-    T = Decimal(10**10) * Decimal((0.8)**((max_iter)//300))
-    print(T)
     P = random_solution(A)
     P_double_prime = P
 
@@ -131,7 +124,7 @@ def simulated_annealing(A: list[int], max_iter: int=MAX_ITER) -> int:
 
         if residue_P_prime < residue_P:
             P = P_prime
-        elif np.random.rand() < np.exp(Decimal(residue_P - residue_P_prime) / T):
+        elif np.random.rand() < np.exp(-(residue_P_prime - residue_P)/T):
             P = P_prime
 
         residue_P_double_prime = residue(P_double_prime, A)

@@ -1,5 +1,6 @@
 import prepartition_algs 
 import standard_algs
+import numpy as np
 
 def residue_test():
     # Test residue function
@@ -10,8 +11,8 @@ def residue_test():
     assert prepartition_algs.residue_prepartition(A, P) == 4
 
 def simulated_annealing_test():
-    # Test simulated annealing
-    A = [10,8,7,6,5]
+    # Test simulated annealing using random np array
+    A = np.random.randint(1, 100, 100)
 
     print(standard_algs.residue(standard_algs.simulated_annealing(A), A))
 
