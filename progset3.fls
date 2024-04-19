@@ -1620,17 +1620,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption-koma.sto
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption-koma.sto
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption-koma.sto
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption-koma.sto
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/filecontents/filecontents.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/filecontents/filecontents.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/filecontents/filecontents.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/filecontents/filecontents.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/filecontents/filecontents.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/filecontents/filecontents.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/filecontents/filecontents.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/filecontents/filecontents.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/filecontents/filecontents.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/filecontents/filecontents.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/filecontents/filecontents.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
@@ -1848,11 +1837,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 INPUT /usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-INPUT ./data.png
-INPUT ./data.png
-INPUT data.png
-INPUT ./data.png
-INPUT ./data.png
 INPUT progset3.aux
 INPUT ./progset3.out
 INPUT ./progset3.out
@@ -1865,6 +1849,7 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb

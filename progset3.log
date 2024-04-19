@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.5)  18 APR 2024 04:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.5)  18 APR 2024 21:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1024,14 +1024,6 @@ Package caption Info: New subtype `subfigure' on input line 239.
 \c@subfigure=\count371
 Package caption Info: New subtype `subtable' on input line 239.
 \c@subtable=\count372
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/filecontents/filecontents.sty
-Package: filecontents 2019/09/20 v1.5 Create an external file from within a LaTeX document
-
-
-Package filecontents Warning: This package is obsolete. Disabling it and
-(filecontents)                passing control to the filecontents environment
-(filecontents)                defined by the LaTeX kernel.
-
 )
 \c@solution=\count373
  (/usr/local/texlive/2023/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
@@ -1153,33 +1145,33 @@ File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (./progset3.aux)
 \openout1 = `progset3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-Package scrbase Info: activating english \abstractname on input line 133.
-Package scrbase Info: activating english \partname on input line 133.
-Package scrbase Info: activating english \figurename on input line 133.
-Package scrbase Info: activating english \tablename on input line 133.
-Package scrbase Info: activating english \contentsname on input line 133.
-Package scrbase Info: activating english \listfigurename on input line 133.
-Package scrbase Info: activating english \listtablename on input line 133.
-Package scrbase Info: activating english \refname on input line 133.
-Package scrbase Info: activating english \indexname on input line 133.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+Package scrbase Info: activating english \abstractname on input line 132.
+Package scrbase Info: activating english \partname on input line 132.
+Package scrbase Info: activating english \figurename on input line 132.
+Package scrbase Info: activating english \tablename on input line 132.
+Package scrbase Info: activating english \contentsname on input line 132.
+Package scrbase Info: activating english \listfigurename on input line 132.
+Package scrbase Info: activating english \listtablename on input line 132.
+Package scrbase Info: activating english \refname on input line 132.
+Package scrbase Info: activating english \indexname on input line 132.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1200,7 +1192,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 133.
+Package hyperref Info: Link coloring ON on input line 132.
  (./progset3.out) (./progset3.out)
 \@outlinefile=\write6
 \openout6 = `progset3.out'.
@@ -1212,7 +1204,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 133.
+(scrartcl)           before \begin{document} on input line 132.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
  (/usr/local/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1220,20 +1212,20 @@ File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 \BKM@id=\count392
 ))
 \c@lstlisting=\count393
-LaTeX Info: Redefining \dots on input line 133.
-LaTeX Info: Redefining \microtypecontext on input line 133.
-Package microtype Info: Applying patch `item' on input line 133.
-Package microtype Info: Applying patch `toc' on input line 133.
-Package microtype Info: Applying patch `eqnum' on input line 133.
-Package microtype Info: Applying patch `footnote' on input line 133.
-Package microtype Info: Applying patch `verbatim' on input line 133.
+LaTeX Info: Redefining \dots on input line 132.
+LaTeX Info: Redefining \microtypecontext on input line 132.
+Package microtype Info: Applying patch `item' on input line 132.
+Package microtype Info: Applying patch `toc' on input line 132.
+Package microtype Info: Applying patch `eqnum' on input line 132.
+Package microtype Info: Applying patch `footnote' on input line 132.
+Package microtype Info: Applying patch `verbatim' on input line 132.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 133.
+LaTeX Info: Redefining \showhyphens on input line 132.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1249,7 +1241,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 136.
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 135.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
@@ -1257,73 +1249,74 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 140.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 139.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 140.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 139.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 140.
+LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 139.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/yhmath/OMXyhex.fd
 File: OMXyhex.fd 
 File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 140.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 139.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 146.
-Package hyperref Info: bookmark level for unknown claim defaults to 0 on input line 146.
+(mdframed)              on input line 145.
+Package hyperref Info: bookmark level for unknown claim defaults to 0 on input line 145.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 184.
+(mdframed)              on input line 183.
  [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (10.874pt too wide) in paragraph at lines 190--191
+Overfull \hbox (10.874pt too wide) in paragraph at lines 189--190
 []\OT1/cmr/bx/n/10.95 (-20) Selecting\OT1/cmr/m/n/10.95 (-20) : Ac-tu-ally ex-tract-ing the two largest el-e-ments in-volves run-ning \OT1/cmtt/m/n/10.95 extract-max
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
 [2]
-<data.png, id=62, 716.568pt x 503.7pt>
-File: data.png Graphic file (type png)
-<use data.png>
-Package pdftex.def Info: data.png  used on input line 271.
-(pdftex.def)             Requested size: 418.25555pt x 294.00616pt.
- [3] [4] [5 <./data.png>] (./progset3.aux)
+Package pgfplots info on input line 287: Using 'lua backend=false' for axis: ymode=log unsupported (yet).
+
+Overfull \hbox (57.67368pt too wide) in paragraph at lines 405--406
+ [][] 
+ []
+
+[3] [4] [5] [6] (./progset3.aux)
 Package rerunfilecheck Info: File `progset3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 53660 strings out of 476025
- 1263675 string characters out of 5790018
- 1948338 words of memory out of 5000000
- 73132 multiletter control sequences out of 15000+600000
+ 54062 strings out of 476025
+ 1275115 string characters out of 5790018
+ 2094324 words of memory out of 5000000
+ 73537 multiletter control sequences out of 15000+600000
  525205 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,20n,131p,10635b,1082s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb>
-Output written on progset3.pdf (5 pages, 534057 bytes).
+ 123i,20n,131p,10635b,2453s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb>
+Output written on progset3.pdf (6 pages, 206481 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
- 18 named destinations out of 1000 (max. 500000)
- 28306 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 162 PDF objects out of 1000 (max. 8388607)
+ 108 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 500000)
+ 28301 words of extra memory for PDF output out of 29859 (max. 10000000)
 
