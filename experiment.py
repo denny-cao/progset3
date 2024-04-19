@@ -13,16 +13,16 @@ INPUT_SIZE = 100
 MAX_VALUE = 10**12
 
 def experiment_record():
-    with open('test.csv', mode='w') as file2:
+    with open('times1.csv', mode='w') as file2:
         writer2 = csv.writer(file2)
         writer2.writerow(["KK", "Repeated Random", "Hill Climbing", "Simulated Annealing", "Repeated Random PP", "Hill Climbing PP", "Simulated Annealing PP"])
-    with open('experiment4.csv', mode='w') as file:
+    with open('experiment5.csv', mode='w') as file:
         writer = csv.writer(file)
         writer.writerow(["KK", "Repeated Random", "Hill Climbing", "Simulated Annealing", "Repeated Random PP", "Hill Climbing PP", "Simulated Annealing PP"])
 
         for i in tqdm(range(INSTANCES)):
             data = np.random.randint(1, MAX_VALUE, INPUT_SIZE)
-            with open('times.csv', mode='a') as file2:
+            with open('times1.csv', mode='a') as file2:
                 writer2 = csv.writer(file2)
                 kk_start = time.time()
                 kk_result = karmarkar_karp(data)
