@@ -138,7 +138,7 @@ def simulated_annealing(A: np.ndarray, max_iter: int=MAX_ITER) -> np.ndarray:
 
         residue_S_double_prime = residue(S_double_prime, A)
         if residue_S < residue_S_double_prime:
-            S_double_prime = S_prime.copy()
+            S_double_prime = S.copy()
 
         if residue_S == 0:
             break
