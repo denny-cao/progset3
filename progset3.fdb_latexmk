@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1713496330 "progset3.tex" "progset3.pdf" "progset3" 1713496332 2
+["pdflatex"] 1713498127 "progset3.tex" "progset3.pdf" "progset3" 1713498130 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -322,11 +322,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1691249134 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1691249112 7883462 c2d7977eb14631b8f29056ae998dcde3 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "Picture1.png" 0 -1 0 ""
+  "Picture1.png" 1713495260 571069 826a3b77b8a33b2a187f9382a438fc8f ""
   "evan.sty" 1713496330 29147 067d432834d056b7f311e2b68ee53dc2 ""
-  "progset3.aux" 1713496332 5798 bf749632dec4a8529993af39946c30ef "pdflatex"
-  "progset3.out" 1713496331 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "progset3.pre" 1713496331 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "progset3.aux" 1713498129 5798 bf749632dec4a8529993af39946c30ef "pdflatex"
+  "progset3.out" 1713498129 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "progset3.pre" 1713498128 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "progset3.tex" 1713496276 33211 8e27b5e3f2a4410306ba9a27fc25f27c ""
   (generated)
   "progset3.aux"
